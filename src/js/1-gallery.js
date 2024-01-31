@@ -84,14 +84,8 @@ const markup = images.map(({ preview, original, description }) => `
 gallery.innerHTML = markup;
 
 const options = {
-  captions: true,
-  captionType: 'attr',
-  captionSelector: 'img',
   captionsData: 'alt',
-  captionPosition: 'bottom',
   captionDelay: 250,
 };
 
 const lightbox = new SimpleLightbox('.gallery a', options);
-
-lightbox.on('show.simplelightbox');
