@@ -1,8 +1,9 @@
 body {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .gallery {
@@ -13,7 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 24px;
-  row-gap: 24px;
+
 }
 
 .gallery-link {
@@ -28,6 +29,71 @@ body {
 }
 
 .gallery-image:hover {
-  transform: scale(1.045);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1.04);
+}
+
+.feedback-form {
+  width: 408px;
+  padding: 24px;
+}
+
+.feedback-form label {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  margin-top: 8px;
+  max-width: 360px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  color: #2E2F42;
+  font-family: Montserrat;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+  padding-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.feedback-form input {
+  margin-bottom: 8px;
+}
+
+.feedback-form textarea {
+  max-height: 80px;
+}
+
+.feedback-form input:hover,
+.feedback-form textarea:hover {
+  border-color: black;
+}
+
+.feedback-form input:focus-visible,
+.feedback-form textarea:focus-visible {
+  outline: none;
+}
+
+.feedback-form textarea {
+  resize: none;
+}
+
+.feedback-form button {
+  color: white;
+  margin-top: 16px;
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background-color: #4E75FF;
+  border: none;
+}
+
+.feedback-form button:hover {
+  background-color: #6C8CFF;
 }
 

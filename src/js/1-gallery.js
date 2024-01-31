@@ -64,6 +64,9 @@ const images = [
   },
 ];
 
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const gallery = document.querySelector('.gallery');
 
 const markup = images.map(({ preview, original, description }) => `
@@ -72,7 +75,6 @@ const markup = images.map(({ preview, original, description }) => `
       <img
         class="gallery-image"
         src="${preview}"
-        data-source="${original}"
         alt="${description}"
       />
     </a>
@@ -80,3 +82,16 @@ const markup = images.map(({ preview, original, description }) => `
 `).join('');
 
 gallery.innerHTML = markup;
+
+const options = {
+  captions: true,
+  captionType: 'attr',
+  captionSelector: 'img',
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
+};
+
+const lightbox = new SimpleLightbox('.gallery a', options);
+
+lightbox.on('show.simplelightbox');
